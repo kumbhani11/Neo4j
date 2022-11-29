@@ -20,7 +20,9 @@ Open neo4j browser using commands below:
   6) install-service     Install the Windows service.
   
 Visit <a href:'http://localhost:7474' target="_blank">http://localhost:7474</a> in your web browser.
+
 Add the json files of product in import folder
+
 For Relation Between Attributes, Services, Brands, Manufacturer Copy the below and run.
 
 <code>
