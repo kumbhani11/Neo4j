@@ -18,7 +18,30 @@ Open neo4j browser using commands below:
   4) restart             Restart the server daemon.
   5) status              Get the status of the server.
   6) install-service     Install the Windows service.
-  7) uninstall-service   Uninstall the Windows service.
-  8) update-service      Update the Windows service.
   
-  
+Visit <a href:'http://localhost:7474' target="_blank">http://localhost:7474</a> in your web browser.
+Add the json files of product in import folder
+For Relation Between Attributes, Services, Brands, Manufacturer Copy the below and run.
+
+<code>
+CALL apoc.load.json('file:/product.json') YIELD value
+CREATE (p:Product {prod_name: value.prod_title, product: value._id})
+SET p.product = value._id
+WITH p, value
+MERGE (m:Manufacture {manufacturer: value.schema.manufacturer})
+MERGE (p)-[:Manufactured_by]->(m)
+MERGE (b:Branded {brand: value.schema.brand.name})
+MERGE (p)-[:Branded_by]->(b)
+CREATE (a:Attributes {
+    Prod_Title: value.prod_title,
+    Image: value.schema.image,
+    Application: value.specifications.Application,
+    Capacity: value.specifications.Capacity
+    })
+MERGE (p)-[:Attributes]->(a)
+MERGE (f:Features {
+    feature: value['product-features']})
+MERGE (p)-[:Features]->(f)
+return p,m,b,a,f limit 25;
+
+</code>
