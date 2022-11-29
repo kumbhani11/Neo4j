@@ -50,5 +50,6 @@ return p,m,b,a,f limit 25;
 
 <h3>Output</h3>
 
-![overview_of_relation](https://user-images.githubusercontent.com/51017576/204611881-4b28cd45-67c5-4f2d-a150-2f58f71e232d.png)
+![overview_of_relation](https://user-images.githubusercontent.com/51017576/204612407-7d001cd7-88b4-4b6e-9f4b-474dfcba6b4d.png)
+
 ![relation_of_product_ _attributes](https://user-images.githubusercontent.com/51017576/204611901-7ca54666-9c63-4e08-bf9c-283ee3907ae2.png)
