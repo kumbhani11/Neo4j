@@ -19,7 +19,7 @@ Open neo4j browser using commands below:
   5) status              Get the status of the server.
   6) install-service     Install the Windows service.
   
-Visit <a href:'http://localhost:7474' target="_blank">http://localhost:7474</a> in your web browser.
+Visit http://localhost:7474 in your web browser.
 
 Add the json files of product in import folder
 
