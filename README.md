@@ -25,7 +25,7 @@ Add the json files of product in import folder
 
 For Relation Between Attributes, Services, Brands, Manufacturer Copy the below and run.
 
-<code>
+```
 CALL apoc.load.json('file:/product.json') YIELD value
 CREATE (p:Product {prod_name: value.prod_title, product: value._id})
 SET p.product = value._id
@@ -46,7 +46,7 @@ MERGE (f:Features {
 MERGE (p)-[:Features]->(f)
 return p,m,b,a,f limit 25;
 
-</code>
+```
 
 <h3>Output</h3>
 
